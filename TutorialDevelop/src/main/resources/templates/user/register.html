@@ -1,0 +1,7 @@
+<form method="post" th:action="@{/user/register}" th:object="${user}">
+ <label for="name">名前</label>
+ <input type="text" th:field="*{name}">
+ <select th:field="*{gender}">
+ <option value="" th:text="選択してください">
+ <option th:each="item:${T(com.dirbato.entity.User.Gender).values()}" th:value="${item}" th:text="${item}">
+ </select>
